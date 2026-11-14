@@ -1,0 +1,268 @@
+{
+  "ambalaje": [
+    {
+      "id": "simpla",
+      "nume": "Cutie kraft simplă",
+      "pretExtra": 0,
+      "poza": "box-simple.webp"
+    },
+    {
+      "id": "decupaj",
+      "nume": "Cutie cu decupaj",
+      "pretExtra": 10,
+      "poza": "box-cutout.webp"
+    },
+    {
+      "id": "decorata",
+      "nume": "Cutie kraft decorată",
+      "pretExtra": 10,
+      "poza": "box-decorated.webp"
+    }
+  ],
+  "colectii": [
+    {
+      "id": "nocturne",
+      "nume": "Nocturne",
+      "tip": "Galaxy",
+      "descriere": "Un univers în alb și negru.",
+      "pret": 75,
+      "nota": "Tehnica folosită nu permite replicarea exactă: fiecare glob este unicat.",
+      "globuri": [
+        {
+          "nume": "Void",
+          "poza": "void.webp"
+        },
+        {
+          "nume": "Storm",
+          "poza": "storm.webp"
+        },
+        {
+          "nume": "Cosmic Marble",
+          "poza": "cosmic-marble.webp"
+        },
+        {
+          "nume": "Orbit",
+          "poza": "orbit.webp"
+        }
+      ]
+    },
+    {
+      "id": "geometric",
+      "nume": "Geometric",
+      "tip": "Alb & negru",
+      "descriere": "Minimalism în forme și linii.",
+      "pret": 90,
+      "globuri": [
+        {
+          "nume": "Triangles",
+          "poza": "triangles.webp"
+        },
+        {
+          "nume": "Circles",
+          "poza": "circles.webp"
+        },
+        {
+          "nume": "Lines WH",
+          "poza": "lines-wh.webp"
+        },
+        {
+          "nume": "Lines BL",
+          "poza": "lines-bl.webp"
+        }
+      ]
+    },
+    {
+      "id": "fauna",
+      "nume": "Fauna",
+      "tip": "Personaje",
+      "descriere": "Din natură, în forme simple.",
+      "pret": 75,
+      "nota": "Opțional: personalizare cu nume",
+      "notaPret": "+15 lei",
+      "pretPersonalizareNume": 15,
+      "globuri": [
+        {
+          "nume": "Fox",
+          "poza": "fox.webp"
+        },
+        {
+          "nume": "Bear",
+          "poza": "bear.webp"
+        },
+        {
+          "nume": "Lion",
+          "poza": "lion.webp"
+        },
+        {
+          "nume": "Wolf",
+          "poza": "wolf.webp"
+        },
+        {
+          "nume": "Hypno Cat",
+          "poza": "hypno-cat.webp"
+        },
+        {
+          "nume": "Sheep",
+          "poza": "sheep.webp"
+        },
+        {
+          "nume": "Penguin",
+          "poza": "penguin.webp"
+        },
+        {
+          "nume": "Hen",
+          "poza": "hen.webp"
+        },
+        {
+          "nume": "În curând"
+        }
+      ]
+    },
+    {
+      "id": "panorama",
+      "nume": "Panorama",
+      "tip": "Povești",
+      "descriere": "Povești în jurul globului.",
+      "pret": 85,
+      "globuri": [
+        {
+          "nume": "Village",
+          "poza": "village.webp"
+        },
+        {
+          "nume": "Evergreen",
+          "poza": "evergreen.webp"
+        },
+        {
+          "nume": "Folk",
+          "poza": "folk.webp"
+        },
+        {
+          "nume": "Dreaming",
+          "poza": "dreaming.webp"
+        }
+      ]
+    },
+    {
+      "id": "origin",
+      "nume": "Origin",
+      "tip": "Simboluri",
+      "descriere": "Simboluri, lumină și sens.",
+      "pret": 95,
+      "globuri": [
+        {
+          "nume": "Radiance",
+          "poza": "radiance.webp"
+        },
+        {
+          "nume": "Tree of Life",
+          "poza": "tree-of-life.webp"
+        },
+        {
+          "nume": "Mandala",
+          "poza": "mandala.webp"
+        },
+        {
+          "nume": "Sun",
+          "poza": "sun.webp"
+        }
+      ]
+    },
+    {
+      "id": "morph",
+      "nume": "Morph",
+      "tip": "Ritm",
+      "descriere": "Dinamism în forme simple.",
+      "pret": 85,
+      "globuri": [
+        {
+          "nume": "Parametric WH",
+          "poza": "parametric-wh.webp"
+        },
+        {
+          "nume": "Polka WH",
+          "poza": "polka-wh.webp"
+        },
+        {
+          "nume": "Polka BL",
+          "poza": "polka-bl.webp"
+        },
+        {
+          "nume": "Parametric BL",
+          "poza": "parametric-bl.webp"
+        }
+      ]
+    },
+    {
+      "id": "nostalgia",
+      "nume": "Nostalgia",
+      "tip": "Joacă",
+      "descriere": "Amintiri din copilărie.",
+      "pret": 80,
+      "globuri": [
+        {
+          "nume": "Tic-Tac-Toe",
+          "poza": "tic-tac-toe.webp"
+        },
+        {
+          "nume": "Hangman",
+          "poza": "hangman.webp"
+        },
+        {
+          "nume": "Hopscotch",
+          "poza": "hopscotch.webp"
+        },
+        {
+          "nume": "În curând"
+        }
+      ]
+    },
+    {
+      "id": "memories",
+      "nume": "Memories",
+      "tip": "Personalizate",
+      "descriere": "Un glob, o poveste.",
+      "pret": 85,
+      "nota": "Inclus: textul personalizat este inclus în preț.",
+      "textPersonalizat": true,
+      "globuri": [
+        {
+          "nume": "Appreciation",
+          "poza": "appreciation.webp"
+        },
+        {
+          "nume": "Greetings RO",
+          "poza": "greetings-ro.webp"
+        },
+        {
+          "nume": "Greetings HU",
+          "poza": "greetings-hu.webp"
+        },
+        {
+          "nume": "Tata",
+          "poza": "tata.webp"
+        },
+        {
+          "nume": "Mama",
+          "poza": "mama.webp"
+        },
+        {
+          "nume": "Dog Paws",
+          "poza": "dog-paws.webp"
+        },
+        {
+          "nume": "Cat Paws",
+          "poza": "cat-paws.webp"
+        },
+        {
+          "nume": "Mentor",
+          "poza": "mentor.webp"
+        },
+        {
+          "nume": "1st Christmas",
+          "poza": "1st-christmas.webp"
+        }
+      ]
+    }
+  ]
+}
