@@ -62,6 +62,17 @@ button,input,select,textarea{font:inherit;color:inherit}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
 .chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px}
 .chips::-webkit-scrollbar{display:none}
+.chips-wrap{position:relative}
+.chips-wrap::before,.chips-wrap::after{content:"";position:absolute;top:0;bottom:0;width:56px;pointer-events:none;z-index:1;transition:opacity .2s}
+.chips-wrap::before{left:0;background:linear-gradient(to right,var(--bg) 30%,transparent)}
+.chips-wrap::after{right:0;background:linear-gradient(to left,var(--bg) 30%,transparent)}
+.chips-wrap.at-start::before,.chips-wrap.at-end::after{opacity:0}
+.cnav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;box-shadow:0 2px 8px rgba(0,0,0,.18);transition:opacity .2s}
+.cnav.prev{left:0}.cnav.next{right:0}
+.chips-wrap.at-start .cnav.prev,.chips-wrap.at-end .cnav.next{opacity:0;pointer-events:none}
+.chips-meta{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 8px;color:var(--ink-2)}
+.chips-meta .hint{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.chips-wrap.fits .cnav{display:none}.chips-wrap.fits::before,.chips-wrap.fits::after{display:none}
 .chip{flex:none;display:inline-flex;gap:8px;align-items:baseline;padding:10px 14px;min-height:44px;border-radius:999px;background:var(--surface);text-decoration:none;font-size:14px;font-weight:500;border:1px solid transparent}
 .chip .price{font-family:var(--mono);font-weight:400;letter-spacing:0;font-size:12px;color:var(--ink-2)}
 .chip.on{background:var(--ink);color:var(--bg)}
@@ -210,7 +221,7 @@ dialog::backdrop{background:rgba(10,12,15,.55)}
     <div>
       <p class="label">Catalog · 8 colecții</p>
       <h1 id="t">Globuri<span>2026</span></h1>
-      <p class="lead">Globuri din sticlă vopsite manual în interior, cu design original aplicat de mână. 8 colecții, fiecare glob lucrat bucată cu bucată.</p>
+      <p class="lead">Globuri din sticlă, vopsite manual pe interior, cu design original aplicat manual pe exterior. 8 colecții distincte, în care fiecare glob este realizat individual, cu atenție la fiecare detaliu.</p>
       <dl class="specs">
         <div><dt>Material</dt><dd>Sticlă</dd></div>
         <div><dt>Diametru</dt><dd>8 cm</dd></div>
@@ -222,10 +233,10 @@ dialog::backdrop{background:rgba(10,12,15,.55)}
 
   <div class="how">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
-    <p>Apasă <b>Adaugă</b> pe modelele preferate, apoi trimite-ne lista pe WhatsApp sau e-mail. Te contactăm pentru detalii.</p>
+    <p>Apasă <b>Adaugă (+)</b> pe modelele dorite, apoi trimite-ne lista pe WhatsApp sau e-mail. Te vom contacta pentru detalii.</p>
   </div>
 
-  <nav class="nav" aria-label="Colecții"><div class="chips" id="chips"></div></nav>
+  <nav class="nav" aria-label="Colecții"><div class="chips-meta label"><span>8 colecții</span><span class="hint" id="chipsHint">Glisează pentru toate →</span></div><div class="chips-wrap at-start" id="chipsWrap"><button class="cnav prev" type="button" id="chipsPrev" aria-label="Colecțiile anterioare"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><div class="chips" id="chips"></div><button class="cnav next" type="button" id="chipsNext" aria-label="Mai multe colecții"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div></nav>
   <main id="cols"></main>
 
   <section class="about" aria-labelledby="about-t">
@@ -244,7 +255,8 @@ dialog::backdrop{background:rgba(10,12,15,.55)}
     </section>
     <section>
       <h3>Livrare</h3>
-      <p>Fiecare glob este realizat manual, iar un singur glob poate dura câteva ore. De aceea, disponibilitatea și termenul de realizare se confirmă pentru fiecare comandă în parte. Te rugăm să comanzi din timp.</p>
+      <p>Disponibilitatea și termenul de realizare se confirmă pentru fiecare comandă în parte.</p>
+      <p>Te rugăm să plasezi comanda din timp. Fiecare glob este realizat în mai multe etape, iar timpul necesar pentru execuție este important. Ne dorim să acordăm atenția cuvenită tuturor, astfel încât fiecare client să își primească produsele la timp.</p>
       <p>Opțiune de ridicare personală din cartierele Borhanci și Gheorgheni.</p>
     </section>
   </div>
@@ -332,6 +344,20 @@ const esc = s => String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>'
 
 // render nav + collections
 $('#chips').innerHTML = COLS.map(c => `<a class="chip" href="#${c.id}" data-chip="${c.id}">${c.name}<span class="price">${c.price}</span></a>`).join('');
+document.querySelector('.chips-meta span').textContent = COLS.length + ' colecții';
+const chipBox = $('#chips'), chipWrap = $('#chipsWrap');
+function chipEdges(){
+  const max = chipBox.scrollWidth - chipBox.clientWidth;
+  chipWrap.classList.toggle('fits', max <= 4);
+  chipWrap.classList.toggle('at-start', chipBox.scrollLeft <= 4);
+  chipWrap.classList.toggle('at-end', chipBox.scrollLeft >= max - 4);
+  $('#chipsHint').hidden = max <= 4;
+}
+chipBox.addEventListener('scroll', () => requestAnimationFrame(chipEdges), {passive:true});
+addEventListener('resize', chipEdges);
+$('#chipsNext').addEventListener('click', () => chipBox.scrollBy({left: chipBox.clientWidth*0.7, behavior:'smooth'}));
+$('#chipsPrev').addEventListener('click', () => chipBox.scrollBy({left: -chipBox.clientWidth*0.7, behavior:'smooth'}));
+chipEdges();
 const cardHTML = (k,n,c,lead) => k ? `
     <div class="card${lead?' lead-card':''}">
       <div class="frame">
@@ -402,7 +428,7 @@ function renderLines(){
 }
 
 function message(){
-  const L = ['Bună ziua! Aș dori să comand următoarele globuri Zoni Atelier:',''];
+  const L = ['Salut! Aș dori să comand următoarele globuri Zoni Atelier:',''];
   cart.forEach((it,k) => {
     const b=byKey[k], c=b.col, p=PACKS.find(x=>x.id===it.pack);
     L.push(`• ${it.qty} × ${b.name} (${c.name}) – ${lei(lineTotal(k))}`);
