@@ -4,19 +4,19 @@
       "id": "simpla",
       "nume": "Cutie kraft simplă",
       "pretExtra": 0,
-      "poza": "box-simple.webp"
+      "poza": "box-simple.png"
     },
     {
       "id": "decupaj",
       "nume": "Cutie cu decupaj",
       "pretExtra": 10,
-      "poza": "box-cutout.webp"
+      "poza": "box-cutout.png"
     },
     {
       "id": "decorata",
       "nume": "Cutie kraft decorată",
       "pretExtra": 10,
-      "poza": "box-decorated.webp"
+      "poza": "box-decorated.png"
     }
   ],
   "colectii": [
@@ -30,19 +30,19 @@
       "globuri": [
         {
           "nume": "Void",
-          "poza": "void.webp"
+          "poza": "void.png"
         },
         {
           "nume": "Storm",
-          "poza": "storm.webp"
+          "poza": "storm.png"
         },
         {
           "nume": "Cosmic Marble",
-          "poza": "cosmic-marble.webp"
+          "poza": "cosmic-marble.png"
         },
         {
           "nume": "Orbit",
-          "poza": "orbit.webp"
+          "poza": "orbit.png"
         }
       ]
     },
@@ -55,19 +55,19 @@
       "globuri": [
         {
           "nume": "Triangles",
-          "poza": "triangles.webp"
+          "poza": "triangles.png"
         },
         {
           "nume": "Circles",
-          "poza": "circles.webp"
+          "poza": "circles.png"
         },
         {
           "nume": "Lines WH",
-          "poza": "lines-wh.webp"
+          "poza": "lines-wh.png"
         },
         {
           "nume": "Lines BL",
-          "poza": "lines-bl.webp"
+          "poza": "lines-bl.png"
         }
       ]
     },
@@ -83,35 +83,35 @@
       "globuri": [
         {
           "nume": "Fox",
-          "poza": "fox.webp"
+          "poza": "fox.png"
         },
         {
           "nume": "Bear",
-          "poza": "bear.webp"
+          "poza": "bear.png"
         },
         {
           "nume": "Lion",
-          "poza": "lion.webp"
+          "poza": "lion.png"
         },
         {
           "nume": "Wolf",
-          "poza": "wolf.webp"
+          "poza": "wolf.png"
         },
         {
           "nume": "Hypno Cat",
-          "poza": "hypno-cat.webp"
+          "poza": "hypno-cat.png"
         },
         {
           "nume": "Sheep",
-          "poza": "sheep.webp"
+          "poza": "sheep.png"
         },
         {
           "nume": "Penguin",
-          "poza": "penguin.webp"
+          "poza": "penguin.png"
         },
         {
           "nume": "Hen",
-          "poza": "hen.webp"
+          "poza": "hen.png"
         },
         {
           "nume": "În curând"
@@ -127,19 +127,19 @@
       "globuri": [
         {
           "nume": "Village",
-          "poza": "village.webp"
+          "poza": "village.png"
         },
         {
           "nume": "Evergreen",
-          "poza": "evergreen.webp"
+          "poza": "evergreen.png"
         },
         {
           "nume": "Folk",
-          "poza": "folk.webp"
+          "poza": "folk.png"
         },
         {
           "nume": "Dreaming",
-          "poza": "dreaming.webp"
+          "poza": "dreaming.png"
         }
       ]
     },
@@ -152,19 +152,19 @@
       "globuri": [
         {
           "nume": "Radiance",
-          "poza": "radiance.webp"
+          "poza": "radiance.png"
         },
         {
           "nume": "Tree of Life",
-          "poza": "tree-of-life.webp"
+          "poza": "tree-of-life.png"
         },
         {
           "nume": "Mandala",
-          "poza": "mandala.webp"
+          "poza": "mandala.png"
         },
         {
           "nume": "Sun",
-          "poza": "sun.webp"
+          "poza": "sun.png"
         }
       ]
     },
@@ -177,19 +177,19 @@
       "globuri": [
         {
           "nume": "Parametric WH",
-          "poza": "parametric-wh.webp"
+          "poza": "parametric-wh.png"
         },
         {
           "nume": "Polka WH",
-          "poza": "polka-wh.webp"
+          "poza": "polka-wh.png"
         },
         {
           "nume": "Polka BL",
-          "poza": "polka-bl.webp"
+          "poza": "polka-bl.png"
         },
         {
           "nume": "Parametric BL",
-          "poza": "parametric-bl.webp"
+          "poza": "parametric-bl.png"
         }
       ]
     },
@@ -202,15 +202,15 @@
       "globuri": [
         {
           "nume": "Tic-Tac-Toe",
-          "poza": "tic-tac-toe.webp"
+          "poza": "tic-tac-toe.png"
         },
         {
           "nume": "Hangman",
-          "poza": "hangman.webp"
+          "poza": "hangman.png"
         },
         {
           "nume": "Hopscotch",
-          "poza": "hopscotch.webp"
+          "poza": "hopscotch.png"
         },
         {
           "nume": "În curând"
@@ -228,39 +228,39 @@
       "globuri": [
         {
           "nume": "Appreciation",
-          "poza": "appreciation.webp"
+          "poza": "appreciation.png"
         },
         {
           "nume": "Greetings RO",
-          "poza": "greetings-ro.webp"
+          "poza": "greetings-ro.png"
         },
         {
           "nume": "Greetings HU",
-          "poza": "greetings-hu.webp"
+          "poza": "greetings-hu.png"
         },
         {
           "nume": "Tata",
-          "poza": "tata.webp"
+          "poza": "tata.png"
         },
         {
           "nume": "Mama",
-          "poza": "mama.webp"
+          "poza": "mama.png"
         },
         {
           "nume": "Dog Paws",
-          "poza": "dog-paws.webp"
+          "poza": "dog-paws.png"
         },
         {
           "nume": "Cat Paws",
-          "poza": "cat-paws.webp"
+          "poza": "cat-paws.png"
         },
         {
           "nume": "Mentor",
-          "poza": "mentor.webp"
+          "poza": "mentor.png"
         },
         {
           "nume": "1st Christmas",
-          "poza": "1st-christmas.webp"
+          "poza": "1st-christmas.png"
         }
       ]
     }
