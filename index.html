@@ -36,7 +36,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .top{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
 .brand{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:12px}
 .brand span{margin-left:14px}
-.top a{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:12px;text-decoration:none}
+.top a{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:12px;text-decoration:none;padding:12px 0 12px 12px;margin:-12px 0}
 
 /* hero */
 .hero{display:grid;gap:28px;padding:4px 0 40px}
@@ -101,7 +101,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .shot:hover img{transform:scale(1.03)}
 .ov{position:absolute;right:8px;bottom:8px}
 .lead-card .ov{right:12px;bottom:12px}
-.card .name{font-weight:500;font-size:14px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .name{font-weight:500;font-size:14px;line-height:1.25;overflow-wrap:anywhere}
 .lead-card .name{font-size:18px;font-weight:600}
 .add{border:0;background:var(--surface);color:var(--ink);border-radius:999px;height:40px;min-width:40px;padding:0;display:inline-grid;place-items:center;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.22);font-weight:600;font-size:14px}
 .add .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
@@ -443,7 +443,7 @@ function message(){
     if(c.custom) L.push(`   Text: ${it.text || 'de stabilit'}`);
   });
   const {t,q} = total();
-  L.push('', `Total estimat: ${q} globuri, ${lei(t)}`, `Livrare: ${$('#cDel').value}`);
+  L.push('', `Total estimat: ${q} ${q===1?'glob':(q%100>=20||q%100===0?'de globuri':'globuri')}, ${lei(t)}`, `Livrare: ${$('#cDel').value}`);
   if($('#cNote').value.trim()) L.push(`Mențiuni: ${$('#cNote').value.trim()}`);
   const nm=$('#cName').value.trim(), ph=$('#cPhone').value.trim(), em=$('#cEmail').value.trim();
   if(ph||em){ L.push('', 'Date de contact:'); if(nm) L.push(`   Nume: ${nm}`); if(ph) L.push(`   Telefon: ${ph}`); if(em) L.push(`   E-mail: ${em}`); }
