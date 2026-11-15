@@ -125,8 +125,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 /* about / packaging */
 .about{padding:56px 0 8px}
 .about h2,.info h2,.contact h2{font-size:clamp(32px,6vw,48px);letter-spacing:-.04em;line-height:1;margin:0 0 18px}
-.about .craft{max-width:60ch;color:var(--ink-2);font-size:17px;margin:-12px 0 32px}
-.about .big{font-size:clamp(22px,4vw,30px);line-height:1.25;letter-spacing:-.02em;max-width:24ch;margin:0 0 28px;font-weight:500}
+.about .craft{max-width:60ch;color:var(--ink-2);font-size:17px;margin:0 0 40px}
+.about .craft p{margin:0 0 14px}
+.about h2.about-k{font-family:var(--mono);font-weight:400;text-transform:uppercase;letter-spacing:.12em;font-size:12px;line-height:1.5;color:var(--ink-2);margin:0 0 14px}
+.about .big{font-family:var(--sans);font-size:clamp(30px,6vw,48px);line-height:1.08;letter-spacing:-.035em;max-width:20ch;margin:0 0 24px;font-weight:700}
 .packs{display:grid;gap:12px}
 @media (min-width:760px){.packs{grid-template-columns:repeat(3,1fr)}}
 .pack{background:var(--surface);border-radius:16px;padding:12px;display:flex;gap:16px;align-items:center}
@@ -240,9 +242,13 @@ dialog::backdrop{background:rgba(10,12,15,.55)}
   <main id="cols"></main>
 
   <section class="about" aria-labelledby="about-t">
-    <h2 id="about-t">Despre globurile noastre</h2>
+    <h2 id="about-t" class="about-k">Despre globurile noastre</h2>
     <p class="big">Design original, gândit pentru forma sferică a globului.</p>
-    <p class="craft">Fiecare glob este lucrat în întregime manual: vopseaua se aplică în interiorul globului, iar după uscare desenul este așezat cu mâna pe suprafața curbată. Realizarea unui singur glob poate dura câteva ore bune. De aceea nu există două globuri perfect identice, iar comenzile se lucrează pe rând, cu grijă.</p>
+    <div class="craft">
+      <p>Fiecare glob trece printr-un proces de realizare în mai multe etape. Pornim de la globuri transparente, în interiorul cărora aplicăm vopseaua pe bază de apă. Urmează o perioadă de uscare de câteva zile.</p>
+      <p>În paralel, designul este gândit, schițat, vectorizat și decupat în vinil cu ajutorul unui cutter plotter. Ulterior, fiecare element este pregătit și aplicat manual pe glob.</p>
+      <p>Procesul de finalizare a unui glob poate dura câteva ore pentru fiecare piesă, iar tocmai această atenție acordată detaliilor face ca fiecare glob să fie unic. Astfel, nu există două globuri perfect identice, iar fiecare comandă este realizată individual, cu răbdare și grijă.</p>
+    </div>
     <h3 class="label" style="margin:0 0 12px">Ambalare</h3>
     <div class="packs" id="packs"></div>
   </section>
