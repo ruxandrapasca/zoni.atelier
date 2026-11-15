@@ -1,6 +1,6 @@
 # Zoni Atelier · Globuri 2026
 
-Site-ul cu oferta de globuri. Se publică automat pe Netlify la fiecare modificare din GitHub.
+Site-ul cu oferta de globuri. Se publică automat pe GitHub Pages, la https://zoniatelier.github.io, la fiecare modificare din repository.
 
 ## Structura
 
@@ -25,7 +25,7 @@ Site-ul cu oferta de globuri. Se publică automat pe Netlify la fiecare modifica
 
 ## Cum schimbi o poză
 
-Urcă poza nouă cu **alt nume** (ex. `fox-2.webp`) și schimbă numele în `produse.json`. Cu un nume nou, browserele clienților nu mai arată poza veche din memorie.
+Urcă poza nouă cu **alt nume** (ex. `fox-2.png`) și schimbă numele în `produse.json`. Cu un nume nou, browserele clienților nu mai arată poza veche din memorie.
 
 ## Cum schimbi un preț
 
