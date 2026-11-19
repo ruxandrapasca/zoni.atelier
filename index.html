@@ -148,7 +148,18 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .link:hover{outline:1px solid var(--ink)}
 .link span{color:var(--ink-2);font-size:14px}
 .link b{font-weight:600;font-size:17px}
-footer{color:var(--ink-2);font-size:13px;margin-top:28px}
+footer{color:var(--ink-2);font-size:13px;margin-top:28px;line-height:2}
+footer a,.small a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+dialog.terms{position:fixed;inset:0;margin:auto;width:min(720px,calc(100vw - 16px));height:calc(100vh - 16px);height:calc(100dvh - 16px);max-height:none;border-radius:20px;background:var(--surface);overflow:hidden;padding:0}
+dialog.terms[open]{display:flex;flex-direction:column}
+.terms .lb-top{border-bottom:1px solid var(--line)}
+.terms .lb-top h2{font-size:20px;margin:0;letter-spacing:-.01em}
+.terms-body{overflow-y:auto;padding:8px 20px 28px;font-size:15px;line-height:1.6;color:var(--ink);-webkit-overflow-scrolling:touch}
+.terms-body h3{font-size:16px;margin:22px 0 6px}
+.terms-body p{margin:0 0 10px;color:var(--ink-2)}
+.terms-body b{color:var(--ink)}
+.terms-body a{color:var(--ink)}
+mark.fill{background:#fde68a;color:#111;padding:0 3px;border-radius:3px}
 
 /* cart bar */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));pointer-events:none;transform:translateY(120%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
@@ -307,7 +318,7 @@ dialog.lb[open]{display:flex;flex-direction:column}
       <a class="link" href="https://www.instagram.com/zoni.atelier" target="_blank" rel="noopener"><div><span>Instagram</span><br><b>@zoni.atelier</b></div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
       <a class="link" href="https://www.facebook.com/zoni.atelier" target="_blank" rel="noopener"><div><span>Facebook</span><br><b>zoni.atelier</b></div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
     </div>
-    <footer>Zoni Atelier · Crăciun 2026</footer>
+    <footer>Zoni Atelier · Crăciun 2026 · <a href="#termeni" data-terms>Termeni și condiții</a> · <a href="#termeni" data-terms="date">Date personale</a> · <a href="https://anpc.ro" target="_blank" rel="noopener">ANPC</a></footer>
   </section>
 </div>
 
@@ -326,6 +337,7 @@ dialog.lb[open]{display:flex;flex-direction:column}
         <label class="field">Mențiuni (opțional)<textarea id="cNote" rows="2" placeholder="ex. termen dorit, culori, întrebări"></textarea></label>
       </div>
       <p class="small">Fiecare glob este vopsit și decorat manual. Disponibilitatea, termenul și prețul final se confirmă de atelier pentru fiecare comandă.</p>
+      <p class="small">Prin trimiterea comenzii ești de acord cu <a href="#termeni" data-terms>Termenii și condițiile</a>. Globurile personalizate nu pot fi returnate.</p>
     </div>
     <div class="foot">
       <div class="total"><span>Total estimat</span><span class="price" id="cTotal">0 lei</span></div>
@@ -358,6 +370,51 @@ dialog.lb[open]{display:flex;flex-direction:column}
   </div>
   <div class="lb-thumbs" id="lbThumbs" aria-label="Globurile din colecție"></div>
   <figcaption><div><b id="lbName"></b><div class="small" id="lbCol"></div><div class="lb-hint">Glisează pentru celelalte globuri</div></div><div id="lbAct"></div></figcaption>
+</dialog>
+
+<dialog id="terms" class="terms" aria-labelledby="terms-t">
+  <div class="lb-top"><h2 id="terms-t">Termeni și condiții</h2><button class="x" type="button" data-close aria-label="Închide"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="terms-body">
+      <h3>1. Cine suntem</h3>
+      <p>Site-ul zoniatelier.github.io prezintă produsele Zoni Atelier. Vânzătorul este <b>VĂLEAN SONIA DANIELA PERSOANĂ FIZICĂ AUTORIZATĂ</b>, cu sediul în Municipiul Cluj-Napoca, Strada Tulcea, Nr. 17, Bloc 13, Scara 2, Etaj 2, Ap. 20, Județul Cluj, CUI 34399438, nr. de înregistrare în Registrul Comerțului F12/766/22.04.2015.</p>
+      <p>Ne poți contacta la telefon 0773 406 141 (și WhatsApp) sau la e-mail zoni.atelier@gmail.com.</p>
+
+      <h3>2. Produsele</h3>
+      <p>Globurile sunt din sticlă, cu diametrul de 8 cm, vopsite manual pe interior și decorate manual pe exterior. Pentru că fiecare glob este lucrat individual, culorile, textura vopselei și poziția elementelor decorative pot varia ușor față de fotografii și de la un glob la altul. Aceste diferențe țin de caracterul handmade al produselor și nu reprezintă defecte.</p>
+      <p>Fotografiile au rol de prezentare. Globurile sunt fragile și sunt destinate decorării, nu folosirii ca jucării.</p>
+
+      <h3>3. Plasarea comenzii</h3>
+      <p>Lista trimisă din site prin WhatsApp sau e-mail, la fel ca o comandă primită telefonic ori prin Facebook sau Instagram, reprezintă o cerere de comandă. Comanda devine fermă abia după ce o confirmăm, împreună cu produsele disponibile, prețul final și termenul de realizare.</p>
+      <p>Totalul afișat în coș este estimativ. Dacă un model nu mai este disponibil sau nu poate fi realizat în termenul dorit, te anunțăm și îți propunem o alternativă. Nu ești obligat să o accepți.</p>
+
+      <h3>4. Prețuri și plată</h3>
+      <p>Prețurile sunt afișate în lei, pe bucată. Ambalajele și personalizările cu cost suplimentar sunt indicate separat. Modalitatea și momentul plății se stabilesc la confirmarea comenzii.</p>
+
+      <h3>5. Realizare, ridicare și livrare</h3>
+      <p>Termenul de realizare se confirmă pentru fiecare comandă în parte. Produsele se pot ridica personal din cartierele Borhanci sau Gheorgheni. Alte variante de livrare se stabilesc de comun acord, iar eventualele costuri de transport ți le comunicăm înainte de confirmarea comenzii.</p>
+      <p>Te rugăm să verifici globurile la primire și să ne anunți cât mai repede dacă vreunul a ajuns deteriorat.</p>
+
+      <h3>6. Dreptul de retragere</h3>
+      <p>Dacă ești consumator și ai primit produsele în urma unei comenzi la distanță (online, telefonic sau prin mesaj), ai dreptul să te retragi din contract în termen de 14 zile de la primirea produselor, fără să precizezi motivul, conform OUG nr. 34/2014.</p>
+      <p><b>Excepție:</b> globurile personalizate (cu nume, text personalizat sau realizate după indicațiile tale) nu pot fi returnate pe baza dreptului de retragere, conform art. 16 lit. c) din OUG nr. 34/2014.</p>
+      <p>Pentru a te retrage, anunță-ne în termenul de 14 zile, prin e-mail sau telefon, printr-o declarație clară. Produsele se returnează în cel mult 14 zile de la anunțare, nefolosite și în ambalajul original. Costul returnării este suportat de tine. Îți rambursăm suma plătită în cel mult 14 zile de la primirea declarației de retragere, putând amâna rambursarea până primim produsele înapoi.</p>
+
+      <h3>7. Conformitatea produselor</h3>
+      <p>Produsele beneficiază de garanția legală de conformitate prevăzută de OUG nr. 140/2021. Dacă un glob prezintă un defect care nu ține de caracterul handmade descris la punctul 2, contactează-ne și găsim împreună soluția potrivită: înlocuire, reducere de preț sau rambursare.</p>
+
+      <h3 id="t-date">8. Date personale</h3>
+      <p>Pentru preluarea și livrarea comenzii folosim datele pe care ni le transmiți: nume, telefon, e-mail, adresă (dacă este cazul) și mențiunile din comandă. Le folosim doar pentru a procesa comanda și a comunica cu tine, pe baza contractului dintre noi, și le păstrăm cât este necesar pentru acest scop și pentru obligațiile legale (de exemplu, cele contabile).</p>
+      <p>Nu vindem și nu folosim datele pentru publicitate. Le putem transmite doar firmei de curierat, dacă alegi livrarea. Comanda ajunge la noi prin aplicația pe care o alegi (WhatsApp, e-mail, Facebook sau Instagram), care are propriile reguli de confidențialitate.</p>
+      <p>Site-ul nu folosește cookie-uri și nu salvează datele introduse în coș. Fonturile sunt încărcate de la Google Fonts, care primește adresa IP a dispozitivului tău.</p>
+      <p>Ai dreptul să ceri acces la date, rectificarea sau ștergerea lor, restricționarea prelucrării și portabilitatea lor, scriindu-ne la zoni.atelier@gmail.com. Poți depune o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (dataprotection.ro).</p>
+
+      <h3>9. Reclamații și litigii</h3>
+      <p>Pentru orice nemulțumire, te rugăm să ne scrii mai întâi. Încercăm să rezolvăm amiabil orice situație. Poți apela și la Autoritatea Națională pentru Protecția Consumatorilor (<a href="https://anpc.ro" target="_blank" rel="noopener">anpc.ro</a>), inclusiv la procedura de soluționare alternativă a litigiilor (<a href="https://reclamatiisal.anpc.ro" target="_blank" rel="noopener">reclamatiisal.anpc.ro</a>).</p>
+
+      <h3>10. Modificări</h3>
+      <p>Putem actualiza acești termeni. Pentru fiecare comandă se aplică varianta în vigoare la data confirmării ei.</p>
+      <p class="small">Ultima actualizare: 17 noiembrie 2026.</p>
+  </div>
 </dialog>
 
 <dialog id="pv" class="pv" aria-label="Previzualizare ambalaj">
@@ -561,7 +618,12 @@ $('#lbStage').addEventListener('touchend', e => {
   if(Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) lbStep(dx < 0 ? 1 : -1);
 }, {passive:true});
 $('#pvPick').addEventListener('click', () => { const pv=$('#pv'), k=pv.dataset.key; if(cart.has(k)){ cart.get(k).pack = pv.dataset.pack; renderLines(); refresh(); } pv.close(); });
-['lb','cart','pv'].forEach(id => $('#'+id).addEventListener('click', e => { if(e.target === e.currentTarget) e.currentTarget.close(); }));
+// termeni și condiții
+function openTerms(sec){ const d = $('#terms'), body = d.querySelector('.terms-body'); if(!d.open) d.showModal(); body.scrollTop = sec ? $('#t-'+sec).offsetTop - body.offsetTop - 8 : 0; }
+document.addEventListener('click', e => { const a = e.target.closest('[data-terms]'); if(!a) return; e.preventDefault(); openTerms(a.dataset.terms); });
+if(location.hash === '#termeni') openTerms();
+addEventListener('hashchange', () => { if(location.hash === '#termeni') openTerms(); });
+['lb','cart','pv','terms'].forEach(id => $('#'+id).addEventListener('click', e => { if(e.target === e.currentTarget) e.currentTarget.close(); }));
 $('#openCart').addEventListener('click', () => { renderLines(); links(); $('#cart').showModal(); });
 function legacyCopy(s){
   const ta = document.createElement('textarea');
